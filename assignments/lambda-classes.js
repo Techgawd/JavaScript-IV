@@ -5,11 +5,11 @@ class Person {
         this.age = attributes.age;
         this.location = attributes.location;
         this.gender = attributes.gender;
-    }
-        speak(){
-            return `Hello my name is ${this.name} and I am from ${this.location}`;
         }
+        speak () {
+            return `Hello my name is ${this.name} and I am from ${this.location}`
     }
+}
 
 class Instructor extends Person {
     constructor (attributes){
@@ -18,35 +18,32 @@ class Instructor extends Person {
         this.favLanguage = attributes.favLanguage;
         this.catchPhrase = attributes.catchPhrase;
     }
-        demo(subject){
-            return `Today we learned about ${this.subject}`;
-            }
-
-        grade(student, subject){
+    demo (subject){
+        return `Today we learned about ${this.subject}`;
+        }
+    grade (student, subject){
             return `${this.student} receives a perfect score on ${this.subject}`;
             }
-        }   
-    
-        
+    }    
+     
 class Student extends Instructor {
     constructor (attributes){
         super (attributes);
         this.previousBackground = attributes.previousBackground;
         this.className = attributes.className;
         this.favSubjects = attributes.favSubjects;
-    }
-        listsSubjects(){
+        }
+
+        PRAssignment (subject){
+            return `${this.name} has submitted a PR for ${this.subject}`;
+        }
+        listsSubjects (){
             return `Today we learned about ${this.favSubjects}`;
             }
-    
-        PRAssignment(subject){
-            return `${student.name} has submitted a PR for ${this.subject}`;
+        sprintChallenge (subject){
+            return `${this.name} has begun sprint challenge on ${this.subject}`;
             }
-
-        sprintChallenge(subject){
-            return `${student.name} has begun sprint challenge on ${this.subject}`;
-            }
-        } 
+        }     
 
 class ProjectManager extends Student {
     constructor (attributes){
@@ -104,13 +101,12 @@ const bill = new Student( {
 });
 
 const thomas = new ProjectManager( {
-    "name": "Ben",
+    "name": "Thomas",
     "age": "31",
     "location": "Florida",
     "gender": "Male",
-    "specialty": "Javascript",
-    "favLanguage": "React",
-    "catchPhrase": "That's pretty cool"
+    "gradClassName": "Web3",
+    "favInstructor": "Daniel"
 });
 
 const mike = new ProjectManager( {
@@ -118,9 +114,13 @@ const mike = new ProjectManager( {
     "age": "31",
     "location": "Florida",
     "gender": "Male",
-    "specialty": "Javascript",
-    "favLanguage": "React",
-    "catchPhrase": "That's pretty cool"
+    "gradClassName": "Javascript",
+    "favInstructor": "React"
 });
 
+console.log (ben.speak());
+console.log (mary.demo("math"));
+console.log (ben.grade("bill", "html"));
 console.log (susan.listsSubjects());
+console.log (bill.PRAssignment("html"));
+console.log (susan.sprintChallenge("html"));
