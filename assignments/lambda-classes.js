@@ -7,7 +7,7 @@ class Person {
         this.gender = attributes.gender;
         }
         speak () {
-            return `Hello my name is ${this.name} and I am from ${this.location}`
+            return `Hello my name is ${this.name} and I am from ${this.location}.`
     }
 }
 
@@ -19,10 +19,10 @@ class Instructor extends Person {
         this.catchPhrase = attributes.catchPhrase;
     }
     demo (subject){
-        return `Today we learned about ${this.subject}`;
+        return `Today we learned about ${subject}.`;
         }
     grade (student, subject){
-            return `${this.student} receives a perfect score on ${this.subject}`;
+            return `${student} received a perfect score on ${subject}.`;
             }
     }    
      
@@ -35,13 +35,13 @@ class Student extends Instructor {
         }
 
         PRAssignment (subject){
-            return `${this.name} has submitted a PR for ${this.subject}`;
+            return `${this.name} has submitted a PR for ${subject}.`;
         }
         listsSubjects (){
-            return `Today we learned about ${this.favSubjects}`;
+            return `Today we learned about ${this.favSubjects}.`;
             }
         sprintChallenge (subject){
-            return `${this.name} has begun sprint challenge on ${this.subject}`;
+            return `${this.name} has begun sprint challenge on ${subject}.`;
             }
         }     
 
@@ -52,11 +52,11 @@ class ProjectManager extends Student {
         this.favInstructor = attributes.className;
                 }
         standUp(channel){
-            return `${this.name} announces to ${this.channel}, @channel standy times!`;
+            return `${this.name} announces to ${channel} @channel standy times!.`;
             }
         
-        debugsCode(subject){
-            return `${student.name} debugs ${student.name}'s code on ${this.subject}`;
+        debugsCode(student, subject){
+            return `${this.name} debugs ${student}'s code on ${subject}.`;
             }
         } 
     
@@ -71,38 +71,38 @@ const ben = new Instructor( {
 });
 
 const mary = new Instructor( {
-    "name": "Ben",
-    "age": "31",
-    "location": "Florida",
-    "gender": "Male",
-    "specialty": "Javascript",
+    "name": "Mary",
+    "age": "33",
+    "location": "California",
+    "gender": "Female",
+    "specialty": "React",
     "favLanguage": "React",
-    "catchPhrase": "That's pretty cool"
+    "catchPhrase": "Keep code clean!"
 });
 
 const susan = new Student( {
-    "name": "Ben",
-    "age": "31",
-    "location": "Florida",
-    "gender": "Male",
+    "name": "Susan",
+    "age": "38",
+    "location": "Georgia",
+    "gender": "Female",
     "previousBackground": "Retail",
     "className": "PT7",
-    "favSubjects": ["css","html","Javascript"]
+    "favSubjects": ["css","html","and Javascript"]
 });
 
 const bill = new Student( {
-    "name": "Ben",
-    "age": "31",
-    "location": "Florida",
+    "name": "Bill",
+    "age": "28",
+    "location": "Texas",
     "gender": "Male",
-    "previousBackground": "Retail",
-    "className": "PT7",
-    "favSubjects": ["css","html","Javascript"]
+    "previousBackground": "Educator",
+    "className": "Web9",
+    "favSubjects": ["React","and Javascript"]
 });
 
 const thomas = new ProjectManager( {
     "name": "Thomas",
-    "age": "31",
+    "age": "41",
     "location": "Florida",
     "gender": "Male",
     "gradClassName": "Web3",
@@ -110,17 +110,19 @@ const thomas = new ProjectManager( {
 });
 
 const mike = new ProjectManager( {
-    "name": "Ben",
-    "age": "31",
-    "location": "Florida",
+    "name": "Mike",
+    "age": "26",
+    "location": "California",
     "gender": "Male",
-    "gradClassName": "Javascript",
-    "favInstructor": "React"
+    "gradClassName": "Webpt3",
+    "favInstructor": "Mary"
 });
 
 console.log (ben.speak());
-console.log (mary.demo("math"));
-console.log (ben.grade("bill", "html"));
+console.log (mary.demo("Javascript"));
+console.log (ben.grade("Frank", "html"));
 console.log (susan.listsSubjects());
 console.log (bill.PRAssignment("html"));
 console.log (susan.sprintChallenge("html"));
+console.log (thomas.standUp("Sprint 03"));
+console.log (mike.debugsCode("Elizabeths","Javascript"));
